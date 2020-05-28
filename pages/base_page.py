@@ -4,6 +4,7 @@ from selenium.webdriver import Remote as RemoteWebDriver
 from selenium.common.exceptions import NoSuchElementException, TimeoutException, NoAlertPresentException
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from .locators import BasePageLocators
 
 
 class BasePage:
@@ -14,6 +15,13 @@ class BasePage:
 
     def open(self):
         self.browser.get(self.url)
+
+    def go_to_login_page(self):
+        login_link = self.browser.find_element(*BasePageLocators.LOGIN_LINK)
+        login_link.click()
+
+    def should_be_login_link(self):
+        assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login link is not present."
 
     def is_element_present(self, how, what):
         try:
@@ -48,4 +56,4 @@ class BasePage:
             print(f"Your code: {alert_text}")
             alert.accept()
         except NoAlertPresentException:
-            print("No second alert presented.")
+            print("No second alert present.")
