@@ -1,9 +1,9 @@
 import time
 import pytest
 
-from .pages.product_page import ProductPage
-from .pages.login_page import LoginPage
-from .pages.cart_page import CartPage
+from pages.product_page import ProductPage
+from pages.cart_page import CartPage
+from pages.login_page import LoginPage
 
 
 @pytest.mark.authorized_user
