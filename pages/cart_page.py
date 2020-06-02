@@ -3,7 +3,6 @@ from .locators import CartPageLocators
 
 
 class CartPage(BasePage):
-
     def should_be_empty(self):
         self.should_have_no_items()
         self.should_have_message_about_empty_cart()

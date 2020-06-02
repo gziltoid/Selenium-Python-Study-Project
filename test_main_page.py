@@ -6,6 +6,7 @@ from .pages.cart_page import CartPage
 
 link = "http://selenium1py.pythonanywhere.com/"
 
+
 @pytest.mark.login_guest
 class TestLoginFromMainPage:
     def test_guest_can_go_to_login_page(self, browser):
@@ -27,7 +28,7 @@ def test_guest_should_see_cart_link(browser):
     page.should_have_cart_link()
 
 
-def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):
+def test_guest_cant_see_product_in_cart_opened_from_main_page(browser):
     page = MainPage(browser, link)
     page.open()
     page.go_to_cart_page()

@@ -2,14 +2,14 @@ from selenium.webdriver.common.by import By
 
 
 class BasePageLocators:
-    USER_ICON = (By.CSS_SELECTOR, ".icon-user")
-    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
-    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+    USER_ICON = (By.CLASS_NAME, "icon-user")
+    LOGIN_LINK = (By.ID, "login_link")
+    LOGIN_LINK_INVALID = (By.ID, "login_link_inc")
     CART_LINK = (By.CSS_SELECTOR, ".basket-mini a.btn-default")
 
 
 class MainPageLocators:
-    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_LINK = (By.ID, "login_link")
 
 
 class LoginPageLocators:
